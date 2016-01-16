@@ -11,7 +11,7 @@ defmodule RocketryTest do
   end
 
   test "escape velocity of moon" do
-        assert Physics.Rocketry.escape_velocity(:moon) == 2.4
+        assert Physics.Rocketry.escape_velocity(:moon) == 2.5
     end
 
   test "escape velocity of unknown planet" do

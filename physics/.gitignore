@@ -1,5 +1,7 @@
 /_build
 /cover
 /deps
+physics/.idea
+/node_modules
 erl_crash.dump
 *.ez
