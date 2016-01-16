@@ -1,20 +1,12 @@
 var gulp = require('gulp'),
-    exec = require('gulp-exec'),
-    options = {
-        continueOnError: false,
-        pipeStdout: false
-    },
-    reportOptions = {
-        err: false,
-        stderr: false,
-        stdout: true
-    };
+    requireDir = require('require-dir');
 
-gulp.task('test', function() {
-    return gulp.src('')
-        .pipe(exec('mix test', options))
-        .on('error', function(err){
-            console.error('**** MIX TEST FAILED ****');
-        })
-        .pipe(exec.reporter(reportOptions));
+var paths = ['./lib/*', './lib/**', './test/*'];
+
+requireDir('./gulp_tasks', { recurse: true });
+
+gulp.task('watch', ['test'], function () {
+    return gulp.watch(paths, ['test']);
 });
+
+gulp.task('default', ['test']);
