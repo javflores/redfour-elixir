@@ -25,7 +25,7 @@ defmodule RocketryTest do
   end
 
   test "orbital acceleration of earth" do
-      assert Physics.Rocketry.orbital_acceleration(100) == 9.6
+      assert Physics.Rocketry.orbital_acceleration(:earth, 100) == 9.6
   end
 
   test "orbital term at 100 km of earth" do
