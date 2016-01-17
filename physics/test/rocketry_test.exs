@@ -11,7 +11,7 @@ defmodule RocketryTest do
   end
 
   test "escape velocity of moon" do
-        assert Physics.Rocketry.escape_velocity(:moon) == 2.5
+        assert Physics.Rocketry.escape_velocity(:moon) == 2.4
     end
 
   test "escape velocity of unknown planet" do
@@ -23,4 +23,17 @@ defmodule RocketryTest do
         Physics.Rocketry.escape_velocity(:unknown)
     end
   end
+
+  test "orbital acceleration of earth" do
+      assert Physics.Rocketry.orbital_acceleration(100) == 9.6
+  end
+
+  test "orbital term at 100 km of earth" do
+    assert Physics.Rocketry.orbital_term(100) == 1.5
+  end
+
+  test "calculate height to 4 hours orbital term of earth" do
+    assert Physics.Rocketry.height_for_orbital_term(4) == 4489.3
+  end
+
 end

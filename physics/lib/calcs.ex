@@ -10,4 +10,28 @@ defmodule Calcs do
     def square_root(val) do
         :math.sqrt(val)
     end
+
+    def cubed_root(val) do
+        :math.pow(val, 0.33)
+    end
+
+    def squared(val) do
+        val * val
+    end
+
+    def cubed(val) do
+        :math.pow(val, 3)
+    end
+
+    def seconds_to_hours(time) do
+        time / 3600
+    end
+
+    def to_seconds(time) do
+        time * 3600
+    end
+
+    def to_m(distance) do
+        distance * 1000
+    end
 end
